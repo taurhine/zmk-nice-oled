@@ -35,20 +35,8 @@ LV_IMG_DECLARE(head_02);
 LV_IMG_DECLARE(head_03);
 LV_IMG_DECLARE(head_04);
 LV_IMG_DECLARE(head_05);
-LV_IMG_DECLARE(head_06);
-LV_IMG_DECLARE(head_07);
-LV_IMG_DECLARE(head_08);
-LV_IMG_DECLARE(head_09);
-LV_IMG_DECLARE(head_10);
-LV_IMG_DECLARE(head_11);
-LV_IMG_DECLARE(head_12);
-LV_IMG_DECLARE(head_13);
-LV_IMG_DECLARE(head_14);
-LV_IMG_DECLARE(head_15);
 
-const lv_img_dsc_t *head_imgs[] = {&head_00, &head_01, &head_02, &head_03, &head_04, &head_05,
-                                   &head_06, &head_07, &head_08, &head_09, &head_10, &head_11,
-                                   &head_12, &head_13, &head_14, &head_15};
+const lv_img_dsc_t *head_imgs[] = {&head_00, &head_01, &head_02, &head_03, &head_04, &head_05};
 
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
 LV_IMG_DECLARE(cat_0);
@@ -179,7 +167,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     lv_obj_center(art);
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD)
-    lv_animimg_set_src(art, (const void **)head_imgs, 16);
+    lv_animimg_set_src(art, (const void **)head_imgs, 6);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
     lv_animimg_set_src(art, (const void **)cat_imgs, 8);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN)
