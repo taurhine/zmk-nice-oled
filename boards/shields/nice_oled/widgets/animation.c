@@ -182,19 +182,19 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     lv_animimg_start(art);
 
 #else // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
-      // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL)
+/*       // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL) */
 
-#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_VIM)
-    lv_img_set_src(art, FIXED_IMAGE_VIM);
-#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_VIP_MARCOS)
-    lv_img_set_src(art, FIXED_IMAGE_VIP_MARCOS);
-#else
-    int length = sizeof(crystal_imgs) / sizeof(crystal_imgs[0]);
-    srand(k_uptime_get_32());
-    int random_index = rand() % length;
+/* #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_VIM) */
+/*     lv_img_set_src(art, FIXED_IMAGE_VIM); */
+/* #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_VIP_MARCOS) */
+/*     lv_img_set_src(art, FIXED_IMAGE_VIP_MARCOS); */
+/* #else */
+/*     int length = sizeof(crystal_imgs) / sizeof(crystal_imgs[0]); */
+/*     srand(k_uptime_get_32()); */
+/*     int random_index = rand() % length; */
 
-    lv_img_set_src(art, crystal_imgs[random_index]);
-#endif
+/*     lv_img_set_src(art, crystal_imgs[random_index]); */
+/* #endif */
 
 #endif // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
        // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL)
