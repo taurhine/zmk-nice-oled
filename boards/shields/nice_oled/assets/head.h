@@ -21,7 +21,7 @@ const lv_img_dsc_t *5_output_images_rotate_flip_images[6] = {
     &head_02,
     &head_03,
     &head_04,
-    &head_05,
+    &head_05
 };
 
 #define 5_OUTPUT_IMAGES_ROTATE_FLIP_IMAGES_NUM_IMAGES 6
