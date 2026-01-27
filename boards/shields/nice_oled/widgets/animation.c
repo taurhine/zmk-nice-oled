@@ -160,26 +160,31 @@ LV_IMG_DECLARE(vim);
 #endif // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
        // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL)
 
+static lv_obj_t *art = NULL;
+
 void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
-    lv_obj_t *art = lv_animimg_create(canvas);
+    // Initialize only once
+    if(!art)
+    {
+        art = lv_animimg_create(canvas);
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
-    lv_obj_center(art);
+        lv_obj_center(art);
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD)
-    lv_animimg_set_src(art, (const void **)head_imgs, 6);
+        lv_animimg_set_src(art, (const void **)head_imgs, 6);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
-    lv_animimg_set_src(art, (const void **)cat_imgs, 8);
+        lv_animimg_set_src(art, (const void **)cat_imgs, 8);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN)
-    lv_animimg_set_src(art, (const void **)spaceman_imgs, 20);
+        lv_animimg_set_src(art, (const void **)spaceman_imgs, 20);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_POKEMON)
-    lv_animimg_set_src(art, (const void **)pokemon_imgs, 48);
+        lv_animimg_set_src(art, (const void **)pokemon_imgs, 48);
 #else
-    lv_animimg_set_src(art, (const void **)crystal_imgs, 16);
+        lv_animimg_set_src(art, (const void **)crystal_imgs, 16);
 #endif
-    lv_animimg_set_duration(art, CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_MS);
-    lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
-    lv_animimg_start(art);
+        lv_animimg_set_duration(art, CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_MS);
+        lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
+        lv_animimg_start(art);
 
 #else // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
 /*       // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL) */
@@ -198,6 +203,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 
 #endif // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
        // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL)
+    }
 
     if (art) {
         lv_obj_align(art, LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_Y);
