@@ -4,8 +4,8 @@
 #include <zmk/endpoints.h>
 
 // nice_epaper and nice_oled standard width = 68, height = 160
-#define CANVAS_WIDTH CONFIG_NICE_OLED_CUSTOM_CANVAS_WIDTH
-#define CANVAS_HEIGHT CONFIG_NICE_OLED_CUSTOM_CANVAS_HEIGHT
+#define CANVAS_WIDTH 32 //CONFIG_NICE_OLED_CUSTOM_CANVAS_WIDTH
+#define CANVAS_HEIGHT 128 //CONFIG_NICE_OLED_CUSTOM_CANVAS_HEIGHT
 
 #define LVGL_BACKGROUND                                                                            \
     IS_ENABLED(CONFIG_NICE_OLED_WIDGET_INVERTED) ? lv_color_black() : lv_color_white()
