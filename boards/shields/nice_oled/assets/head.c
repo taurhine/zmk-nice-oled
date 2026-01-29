@@ -930,7 +930,7 @@ LV_IMG_DECLARE(head_09);
 LV_IMG_DECLARE(head_10);
 LV_IMG_DECLARE(head_11);
 
-static const lv_img_dsc_t * const head_imgs[] = {
+const lv_img_dsc_t * const head_imgs[] = {
     &head_00, &head_01, &head_02, &head_03, &head_04, &head_05,
     &head_06, &head_07, &head_08, &head_09, &head_10, &head_11,
 };
