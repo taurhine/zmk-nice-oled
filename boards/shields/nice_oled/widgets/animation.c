@@ -29,6 +29,19 @@ const lv_img_dsc_t *crystal_imgs[] = {
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD)
 
+LV_IMG_DECLARE(head_00);
+LV_IMG_DECLARE(head_01);
+LV_IMG_DECLARE(head_02);
+LV_IMG_DECLARE(head_03);
+LV_IMG_DECLARE(head_04);
+LV_IMG_DECLARE(head_05);
+LV_IMG_DECLARE(head_06);
+LV_IMG_DECLARE(head_07);
+LV_IMG_DECLARE(head_08);
+LV_IMG_DECLARE(head_09);
+LV_IMG_DECLARE(head_10);
+LV_IMG_DECLARE(head_11);
+
 const lv_img_dsc_t * const head_imgs[] = {
     &head_00, &head_01, &head_02, &head_03, &head_04, &head_05,
     &head_06, &head_07, &head_08, &head_09, &head_10, &head_11,

@@ -916,16 +916,3 @@ const lv_img_dsc_t head_11 = {
 .data_size = 620,
 .data = head_11_map,
 };
-
-LV_IMG_DECLARE(head_00);
-LV_IMG_DECLARE(head_01);
-LV_IMG_DECLARE(head_02);
-LV_IMG_DECLARE(head_03);
-LV_IMG_DECLARE(head_04);
-LV_IMG_DECLARE(head_05);
-LV_IMG_DECLARE(head_06);
-LV_IMG_DECLARE(head_07);
-LV_IMG_DECLARE(head_08);
-LV_IMG_DECLARE(head_09);
-LV_IMG_DECLARE(head_10);
-LV_IMG_DECLARE(head_11);
