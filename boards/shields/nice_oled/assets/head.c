@@ -3,11 +3,11 @@
 #define LV_ATTRIBUTE_MEM_ALIGN
 #endif
 
-#ifndef LV_ATTRIBUTE_IMG_HEAD_00
-#define LV_ATTRIBUTE_IMG_HEAD_00
+#ifndef LV_ATTRIBUTE_IMG_WARIO_00
+#define LV_ATTRIBUTE_IMG_WARIO_00
 #endif
 
-static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_00 uint8_t head_00_map[] = {
+static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_WARIO_00 uint8_t wario_00_map[] = {
 
 #if CONFIG_NICE_OLED_WIDGET_INVERTED
 /*Palette: Idx 0: Black (#if), Idx 1: White (#if)*/
@@ -34,11 +34,11 @@ static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_00 uint8_t head_00_map
 0x7B, 0xF5, 0x00, 0x00, 0x00, 0x00, 0x7F, 0xFE, 0x00, 0x00, 0x00, 0x00,
 0x5F, 0xBD, 0x00, 0x00, 0x00, 0x00, 0xFD, 0xFA, 0x00, 0x00, 0x00, 0x00
 };
-#ifndef LV_ATTRIBUTE_IMG_HEAD_01
-#define LV_ATTRIBUTE_IMG_HEAD_01
+#ifndef LV_ATTRIBUTE_IMG_WARIO_01
+#define LV_ATTRIBUTE_IMG_WARIO_01
 #endif
 
-static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_01 uint8_t head_01_map[] = {
+static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_WARIO_01 uint8_t wario_01_map[] = {
 
 #if CONFIG_NICE_OLED_WIDGET_INVERTED
 /*Palette: Idx 0: Black (#if), Idx 1: White (#if)*/
@@ -65,11 +65,11 @@ static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_01 uint8_t head_01_map
 0x5F, 0xBE, 0x07, 0x00, 0x00, 0x00, 0xFD, 0xF9, 0x00, 0x00, 0x00, 0x00,
 0x7F, 0xFE, 0x00, 0x00, 0x00, 0x00, 0xBF, 0x7D, 0x00, 0x00, 0x00, 0x00
 };
-#ifndef LV_ATTRIBUTE_IMG_HEAD_02
-#define LV_ATTRIBUTE_IMG_HEAD_02
+#ifndef LV_ATTRIBUTE_IMG_WARIO_02
+#define LV_ATTRIBUTE_IMG_WARIO_02
 #endif
 
-static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_02 uint8_t head_02_map[] = {
+static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_WARIO_02 uint8_t wario_02_map[] = {
 
 #if CONFIG_NICE_OLED_WIDGET_INVERTED
 /*Palette: Idx 0: Black (#if), Idx 1: White (#if)*/
@@ -96,11 +96,11 @@ static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_02 uint8_t head_02_map
 0x7F, 0xFD, 0x00, 0x00, 0x00, 0x00, 0xBF, 0x7E, 0x00, 0x00, 0x00, 0x00,
 0xBF, 0xDD, 0x00, 0x00, 0x00, 0x00, 0xAF, 0xFE, 0x00, 0x00, 0x00, 0x00
 };
-#ifndef LV_ATTRIBUTE_IMG_HEAD_03
-#define LV_ATTRIBUTE_IMG_HEAD_03
+#ifndef LV_ATTRIBUTE_IMG_WARIO_03
+#define LV_ATTRIBUTE_IMG_WARIO_03
 #endif
 
-static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_03 uint8_t head_03_map[] = {
+static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_WARIO_03 uint8_t wario_03_map[] = {
 
 #if CONFIG_NICE_OLED_WIDGET_INVERTED
 /*Palette: Idx 0: Black (#if), Idx 1: White (#if)*/
@@ -127,11 +127,11 @@ static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_03 uint8_t head_03_map
 0xBF, 0xDE, 0x00, 0x00, 0x00, 0x00, 0xAF, 0xFD, 0x00, 0x00, 0x00, 0x00,
 0x7B, 0xF6, 0x00, 0x00, 0x00, 0x00, 0x7F, 0xFD, 0x00, 0x00, 0x00, 0x00
 };
-#ifndef LV_ATTRIBUTE_IMG_HEAD_04
-#define LV_ATTRIBUTE_IMG_HEAD_04
+#ifndef LV_ATTRIBUTE_IMG_WARIO_04
+#define LV_ATTRIBUTE_IMG_WARIO_04
 #endif
 
-static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_04 uint8_t head_04_map[] = {
+static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_WARIO_04 uint8_t wario_04_map[] = {
 
 #if CONFIG_NICE_OLED_WIDGET_INVERTED
 /*Palette: Idx 0: Black (#if), Idx 1: White (#if)*/
@@ -158,11 +158,11 @@ static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_04 uint8_t head_04_map
 0x7B, 0xF5, 0x00, 0x00, 0x00, 0x00, 0x7F, 0xFE, 0x00, 0x00, 0x00, 0x00,
 0x5F, 0xBD, 0x00, 0x00, 0x00, 0x00, 0xFD, 0xFA, 0x00, 0x00, 0x00, 0x00
 };
-#ifndef LV_ATTRIBUTE_IMG_HEAD_05
-#define LV_ATTRIBUTE_IMG_HEAD_05
+#ifndef LV_ATTRIBUTE_IMG_WARIO_05
+#define LV_ATTRIBUTE_IMG_WARIO_05
 #endif
 
-static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_05 uint8_t head_05_map[] = {
+static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_WARIO_05 uint8_t wario_05_map[] = {
 
 #if CONFIG_NICE_OLED_WIDGET_INVERTED
 /*Palette: Idx 0: Black (#if), Idx 1: White (#if)*/
@@ -190,62 +190,62 @@ static const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_IMG_HEAD_05 uint8_t head_05_map
 0x7F, 0xFE, 0x00, 0x00, 0x00, 0x00, 0xBF, 0x7D, 0x00, 0x00, 0x00, 0x00
 };
 
-const lv_img_dsc_t head_00 = {
+const lv_img_dsc_t wario_00 = {
 .header.cf = LV_IMG_CF_INDEXED_1BIT,
 .header.always_zero = 0,
 .header.reserved = 0,
 .header.w = 48,
 .header.h = 32,
 .data_size = 200,
-.data = head_00_map,
+.data = wario_00_map,
 };
 
-const lv_img_dsc_t head_01 = {
+const lv_img_dsc_t wario_01 = {
 .header.cf = LV_IMG_CF_INDEXED_1BIT,
 .header.always_zero = 0,
 .header.reserved = 0,
 .header.w = 48,
 .header.h = 32,
 .data_size = 200,
-.data = head_01_map,
+.data = wario_01_map,
 };
 
-const lv_img_dsc_t head_02 = {
+const lv_img_dsc_t wario_02 = {
 .header.cf = LV_IMG_CF_INDEXED_1BIT,
 .header.always_zero = 0,
 .header.reserved = 0,
 .header.w = 48,
 .header.h = 32,
 .data_size = 200,
-.data = head_02_map,
+.data = wario_02_map,
 };
 
-const lv_img_dsc_t head_03 = {
+const lv_img_dsc_t wario_03 = {
 .header.cf = LV_IMG_CF_INDEXED_1BIT,
 .header.always_zero = 0,
 .header.reserved = 0,
 .header.w = 48,
 .header.h = 32,
 .data_size = 200,
-.data = head_03_map,
+.data = wario_03_map,
 };
 
-const lv_img_dsc_t head_04 = {
+const lv_img_dsc_t wario_04 = {
 .header.cf = LV_IMG_CF_INDEXED_1BIT,
 .header.always_zero = 0,
 .header.reserved = 0,
 .header.w = 48,
 .header.h = 32,
 .data_size = 200,
-.data = head_04_map,
+.data = wario_04_map,
 };
 
-const lv_img_dsc_t head_05 = {
+const lv_img_dsc_t wario_05 = {
 .header.cf = LV_IMG_CF_INDEXED_1BIT,
 .header.always_zero = 0,
 .header.reserved = 0,
 .header.w = 48,
 .header.h = 32,
 .data_size = 200,
-.data = head_05_map,
+.data = wario_05_map,
 };
