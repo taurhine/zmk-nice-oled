@@ -176,7 +176,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     if(!art)
     {
         art = lv_animimg_create(canvas);
-        lv_obj_set_size(art, 48, 68);
+        /* lv_obj_set_size(art, 69, 68); */
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
         lv_obj_center(art);
 
