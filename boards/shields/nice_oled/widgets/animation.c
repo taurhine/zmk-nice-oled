@@ -6,22 +6,33 @@
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD)
 
+LV_IMG_DECLARE(wario_ceiling_00);
+LV_IMG_DECLARE(wario_ceiling_01);
+LV_IMG_DECLARE(wario_ceiling_02);
+LV_IMG_DECLARE(wario_ceiling_03);
+LV_IMG_DECLARE(wario_ceiling_04);
+LV_IMG_DECLARE(wario_ceiling_05);
+LV_IMG_DECLARE(wario_ceiling_06);
+LV_IMG_DECLARE(wario_ceiling_07);
+LV_IMG_DECLARE(wario_ceiling_08);
+LV_IMG_DECLARE(wario_ceiling_09);
+LV_IMG_DECLARE(wario_ceiling_10);
+LV_IMG_DECLARE(wario_ceiling_11);
+
+const lv_img_dsc_t * const wario_ceiling_imgs[] = {
+    &wario_ceiling_00, &wario_ceiling_01, &wario_ceiling_02, &wario_ceiling_03, &wario_ceiling_04, &wario_ceiling_05,
+    &wario_ceiling_06, &wario_ceiling_07, &wario_ceiling_08, &wario_ceiling_09, &wario_ceiling_10, &wario_ceiling_11,
+};
+
 LV_IMG_DECLARE(wario_00);
 LV_IMG_DECLARE(wario_01);
 LV_IMG_DECLARE(wario_02);
 LV_IMG_DECLARE(wario_03);
 LV_IMG_DECLARE(wario_04);
 LV_IMG_DECLARE(wario_05);
-/* LV_IMG_DECLARE(wario_06); */
-/* LV_IMG_DECLARE(wario_07); */
-/* LV_IMG_DECLARE(wario_08); */
-/* LV_IMG_DECLARE(wario_09); */
-/* LV_IMG_DECLARE(wario_10); */
-/* LV_IMG_DECLARE(wario_11); */
 
 const lv_img_dsc_t * const wario_imgs[] = {
     &wario_00, &wario_01, &wario_02, &wario_03, &wario_04, &wario_05,
-    /* &wario_06, &wario_07, &wario_08, &wario_09, &wario_10, &wario_11, */
 };
 
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
@@ -61,14 +72,23 @@ LV_IMG_DECLARE(vim);
 void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 
     lv_obj_t *art = lv_animimg_create(canvas);
+
     /* lv_obj_set_size(art, 69, 32); */
-    lv_obj_set_size(art, 48, 32);
+    /* lv_obj_set_size(art, 48, 32); */
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
     lv_obj_center(art);
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD)
+
+    lv_obj_set_size(art, 48, 32);
+
+    lv_obj_t *ceiling = lv_animimg_create(canvas);
+    lv_obj_set_size(ceiling, 22, 32);
+
+    lv_animimg_set_src(ceiling, (const void **)wario_ceiling_imgs, 12);
     lv_animimg_set_src(art, (const void **)wario_imgs, 6);
+
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
     lv_animimg_set_src(art, (const void **)cat_imgs, 8);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN)
@@ -100,9 +120,16 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 #endif // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
     // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL)
 
+    lv_obj_align(ceiling,
+                 LV_ALIGN_TOP_LEFT,
+                 CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_X + 48,
+                 CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_Y);
+
     lv_obj_align(art,
                  LV_ALIGN_TOP_LEFT,
                  CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_X,
                  CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_Y);
+
+
 }
 #endif
