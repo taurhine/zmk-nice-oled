@@ -127,7 +127,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 
     lv_obj_align(ceiling,
                  LV_ALIGN_TOP_LEFT,
-                 CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_X + 48,
+                 CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_X + 48 + 24,
                  CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_Y);
 
     lv_obj_align(art,
