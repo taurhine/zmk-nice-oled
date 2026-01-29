@@ -98,8 +98,13 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 #else
     lv_animimg_set_src(art, (const void **)crystal_imgs, 16);
 #endif
+    lv_animimg_set_duration(ceiling, CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_MS * 2);
+    lv_animimg_set_repeat_count(ceiling, LV_ANIM_REPEAT_INFINITE);
+
     lv_animimg_set_duration(art, CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_MS);
     lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
+
+    lv_animimg_start(ceiling);
     lv_animimg_start(art);
 
 #else // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
