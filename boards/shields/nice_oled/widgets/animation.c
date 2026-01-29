@@ -68,7 +68,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     lv_obj_center(art);
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD)
-    lv_animimg_set_src(art, (const void **)head_imgs, 12);
+    lv_animimg_set_src(art, (const void **)head_imgs, 6);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
     lv_animimg_set_src(art, (const void **)cat_imgs, 8);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN)
