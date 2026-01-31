@@ -73,20 +73,24 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 
     lv_obj_t *art = lv_animimg_create(canvas);
 
-    /* lv_obj_set_size(art, 69, 32); */
-    /* lv_obj_set_size(art, 48, 32); */
-
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
     lv_obj_center(art);
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD)
-
     lv_obj_set_size(art, 48, 32);
 
-    lv_obj_t *ceiling = lv_animimg_create(canvas);
-    lv_obj_set_size(ceiling, 22, 32);
+    srand(k_uptime_get_32());
+    bool hasCeiling = rand() & 1;
 
-    lv_animimg_set_src(ceiling, (const void **)wario_ceiling_imgs, 12);
+    lv_obj_t *ceiling = NULL;
+
+    if(hasCeiling)
+    {
+        ceiling = lv_animimg_create(canvas);
+        lv_obj_set_size(ceiling, 22, 32);
+        lv_animimg_set_src(ceiling, (const void **)wario_ceiling_imgs, 12);
+    }
+
     lv_animimg_set_src(art, (const void **)wario_imgs, 6);
 
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
@@ -98,13 +102,19 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 #else
     lv_animimg_set_src(art, (const void **)crystal_imgs, 16);
 #endif
-    lv_animimg_set_duration(ceiling, CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_MS * 2);
-    lv_animimg_set_repeat_count(ceiling, LV_ANIM_REPEAT_INFINITE);
+
+    if(hasCeiling)
+    {
+        lv_animimg_set_duration(ceiling, CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_MS * 2);
+        lv_animimg_set_repeat_count(ceiling, LV_ANIM_REPEAT_INFINITE);
+    }
 
     lv_animimg_set_duration(art, CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_MS);
     lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
 
-    lv_animimg_start(ceiling);
+    if(hasCeiling)
+        lv_animimg_start(ceiling);
+
     lv_animimg_start(art);
 
 #else // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
@@ -125,16 +135,15 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 #endif // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
     // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL)
 
-    lv_obj_align(ceiling,
-                 LV_ALIGN_TOP_LEFT,
-                 CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_X + 48 + 24,
-                 CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_Y);
+    if(hasCeiling)
+        lv_obj_align(ceiling,
+                     LV_ALIGN_TOP_LEFT,
+                     CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_X + 48 + 24,
+                     CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_Y);
 
     lv_obj_align(art,
                  LV_ALIGN_TOP_LEFT,
                  CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_X,
                  CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CUSTOM_Y);
-
-
 }
 #endif
